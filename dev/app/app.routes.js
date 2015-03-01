@@ -6,9 +6,9 @@
         .config(function($stateProvider, $locationProvider, $urlRouterProvider) {
 
             $stateProvider
-                .state('main', {
-                    url: '/',
-                    template: '<div>Hello World</div>'
+                .state('error', {
+                    url: '/error',
+                    template: '<div>Error</div>'
                 });
 
             // Activate Mode HTML5
@@ -16,7 +16,7 @@
             $locationProvider.hashPrefix = '!';
 
             /// Default Route
-            $urlRouterProvider.otherwise('/');
+            $urlRouterProvider.otherwise('/login');
 
 
         })
