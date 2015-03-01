@@ -1,0 +1,8 @@
+{
+    "_comment": "server: local, dev, pro, quality, staging",
+    "local": {
+        "directory" : "dev",
+        "port" : 8000
+    },
+    "server" : "local"
+}

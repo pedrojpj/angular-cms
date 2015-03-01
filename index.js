@@ -13,5 +13,5 @@ app.all('/*', function(req, res, next) {
     res.sendfile('index.html', {root: __dirname + '/' + dirProject + '/'});
 });
 
-http.createServer(app).listen(PORT);
-console.log('server listen'+ PORT);
+app.listen(PORT);
+console.log('server listen '+ PORT);
