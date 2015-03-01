@@ -1,0 +1,9 @@
+{
+  "name": "client",
+  "main": "index.js",
+  "version": "0.0.1",
+  "authors": [
+    "Pedro.Pena <pedro.jose@gigigo.com>"
+  ],
+  "license": "MIT"
+}
