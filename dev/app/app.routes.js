@@ -8,7 +8,7 @@
             $stateProvider
                 .state('main', {
                     url: '/',
-                    template: '<div>Hello World</div>'
+                    template: '<div><span ng-init="greetings = \'Hello World\'">{{greetings}} <br /><br /><input ng-model="greetings"></div>'
                 });
 
             // Activate Mode HTML5
