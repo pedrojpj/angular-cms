@@ -6,7 +6,7 @@
             <p ng-show="loginForm.password.$isEmpty && loginForm.email.$isEmpty">You must fill in all fields</p>
         </div>
 
-        <form name="loginForm" ng-submit="send()" novalidate>
+        <form name="loginForm" ng-submit="submit()" novalidate>
             <div class="form-group">
                 <label>Email</label>
                 <input type="email" class="form-control" name="email" ng-model="user.email" ng-required="true" placeholder="Enter email">
@@ -16,6 +16,8 @@
                 <input type="password" class="form-control" name="password" ng-model="user.password" ng-required="true" placeholder="Enter Password">
             </div>
             <button type="submit" class="btn btn-default">Send</button>
+
+            <p>Not user? <a ui-sref='login.register'>Sign up</a></p>
         </form>
     </div>
 </div>

@@ -19,6 +19,15 @@
                         }
                     }
                 })
+                .state('login.register', {
+                    url: '/register',
+                    views : {
+                        'content': {
+                            templateUrl: 'app/components/login/registerView.html',
+                            controller: 'RegisterController'
+                        }
+                    }
+                })
         })
 
 
