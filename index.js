@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var http = require('http');
 var CONFIG  = require('./config.json');
 
 var dirProject = CONFIG[CONFIG.server].directory;
@@ -14,4 +15,4 @@ app.all('/*', function(req, res, next) {
 });
 
 http.createServer(app).listen(PORT);
-console.log('server listen'+ PORT);
+console.log('server listen '+ PORT);
