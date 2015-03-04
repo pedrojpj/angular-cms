@@ -2,3 +2,4 @@
 config.json
 /dev/assets/libs/
 /node_modules
+/.idea/
