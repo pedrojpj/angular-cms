@@ -6,7 +6,7 @@
         .controller('LoginController', LoginController)
         .controller('RegisterController', RegisterController)
 
-    function LoginController($scope, $state, LoginService, AuthenticationService) {
+    function LoginController($scope, $state, LoginService, AuthenticationService, UserService) {
 
         $scope.submit = function() {
 
@@ -17,6 +17,7 @@
 
                 LoginService.signin($scope.user)
                     .then(function (data) {
+                        UserService.setData(data.user);
                         AuthenticationService.setToken(data.token);
                         $state.go('app.main');
                     })

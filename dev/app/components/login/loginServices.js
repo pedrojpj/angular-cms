@@ -9,7 +9,8 @@
             $logProvider.debugEnabled(LOG);
         })
         .factory('LoginService', LoginService)
-        .factory('AuthenticationService', AuthenticationService);
+        .factory('AuthenticationService', AuthenticationService)
+        .factory('UserService', UserService);
 
         function LoginService($q, $http, $log, URL_SERVICE) {
 
@@ -83,6 +84,25 @@
             return auth;
         }
 
+        function UserService() {
+            var UserService = {};
+
+            UserService.setData = function(data) {
+                localStorage.setItem('user', JSON.stringify(data));
+            }
+
+            UserService.getData = function(data) {
+                return JSON.parse(localStorage.getItem('user'));
+            }
+
+            UserService.deleteData = function() {
+                localStorage.removeItem('user');
+                return null;
+            }
+
+            return UserService;
+
+        }
 
 
 
