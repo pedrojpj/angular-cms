@@ -6,9 +6,29 @@
         .controller('LoginController', LoginController)
         .controller('RegisterController', RegisterController)
 
-    function LoginController($scope) {
+    function LoginController($scope, $state, LoginService, AuthenticationService) {
 
         $scope.submit = function() {
+
+            $scope.message = null;
+            $scope.alert = null;
+
+            if ($scope.loginForm.$valid) {
+
+                LoginService.signin($scope.user)
+                    .then(function (data) {
+                        AuthenticationService.setToken(data.token);
+                        $state.go('app.main');
+                    })
+                    .catch(function (data) {
+                        $scope.message = data.message;
+                        $scope.alert = 'alert-danger';
+                    });
+            }
+            else {
+                $scope.message = 'You must fill in all fields';
+                $scope.alert = 'alert-danger';
+            }
 
         }
 
