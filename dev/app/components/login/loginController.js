@@ -16,15 +16,29 @@
 
     function RegisterController($scope, LoginService) {
 
+
         $scope.submit = function() {
 
-            LoginService.signup($scope.user)
-                .then(function(data) {
+            $scope.message = null;
+            $scope.alert = null;
 
-                })
-                .catch(function(error) {
+            if ($scope.registerForm.$valid) {
 
-                });
+                LoginService.signup($scope.user)
+                    .then(function(data) {
+                        $scope.message = 'Success register';
+                        $scope.alert = 'alert-success';
+                        $scope.sendOk = true;
+                    })
+                    .catch(function(error) {
+                        $scope.message = 'An error occurred';
+                        $scope.alert = 'alert-danger';
+                    });
+
+            } else {
+                $scope.message = 'You must fill in all fields';
+                $scope.alert = 'alert-danger';
+            }
 
         }
 

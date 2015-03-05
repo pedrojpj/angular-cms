@@ -2,8 +2,8 @@
     'use strict';
 
     angular
-        .module('app.services')
-        .config(function($httpProvider, $logProvider, HEADER, TIMEOUT, LOG) {
+        .module('app.login')
+        .config(function($httpProvider, $logProvider, TIMEOUT, LOG) {
             $httpProvider.defaults.timeout = TIMEOUT;
             $httpProvider.useApplyAsync(true);
             $logProvider.debugEnabled(LOG);
@@ -48,6 +48,7 @@
 
 
         }
+
 
 
 })();

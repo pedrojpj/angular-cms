@@ -5,7 +5,9 @@
         .module('app.core')
         .controller('CoreController', CoreController)
 
-    function CoreController($scope, $rootScope) {
+    function CoreController($scope, $http) {
+
+
 
 
     }
