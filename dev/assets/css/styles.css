@@ -1,4 +1,6 @@
-
+.container {
+    padding-bottom: 30px;
+}
 
 footer {
     position:fixed;
